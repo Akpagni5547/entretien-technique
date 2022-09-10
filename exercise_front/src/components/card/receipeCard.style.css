@@ -1,0 +1,19 @@
+.card{
+    border: 2px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.cardContent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-img{
+    width: 100%;
+    max-width: 100px;
+}
+
+.bookmark{
+    width: 15px;
+}
