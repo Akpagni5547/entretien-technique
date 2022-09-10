@@ -2,7 +2,6 @@ import React from 'react';
 import Header from "./components/Header"
 import ReceipeCard from './components/card/ReceipeCard'
 import CardModal from './components/modal/CardModal';
-import { Button } from 'antd';
 
 // Images
 import image1 from './assets/image1.jpeg';
@@ -19,7 +18,6 @@ function App() {
       <main className='main'>
         <div id="modal">
           <CardModal/>
-          {/* <Button type="primary">Add new</Button> */}
         </div>
         <div className='content'>
           <ReceipeCard img={image1} />

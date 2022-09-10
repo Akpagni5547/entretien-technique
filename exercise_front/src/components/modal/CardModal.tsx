@@ -1,32 +1,35 @@
-import React from 'react'
-import { Button, Modal } from 'antd';
-import  { useState } from 'react';
+import React from "react";
+import { Button } from "antd";
+import { useState } from "react";
+import CollectionCreateForm from "./CollectionCreateForm";
 
-function CardModal() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const CardModal: React.FC = () => {
+  const [open, setOpen] = useState(false);
 
-  const showModal = () => {
-    setIsModalOpen(true);
+  const onCreate = (values: any) => {
+    console.log("Received values of form: ", values);
+    setOpen(false);
   };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <>
-      <Button type="primary" onClick={showModal}>Add new</Button>
-      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-      </Modal>
-    </>
-  )
-}
+      <Button
+        type="primary"
+        onClick={() => {
 
-export default CardModal
+          setOpen(true);
+        }}
+      >
+        Ajoutez une recette
+      </Button>
+      <CollectionCreateForm
+        open={open}
+        onCreate={onCreate}
+        onCancel={() => {
+          setOpen(false);
+        }}
+      />
+    </>
+  );
+};
+
+export default CardModal;
